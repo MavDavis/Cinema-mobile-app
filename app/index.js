@@ -16,6 +16,7 @@ import {
   darkLocation,
   darkSearch,
 } from "../assets/index";
+import { TextInput } from "react-native-gesture-handler";
 const index = () => {
   const [user, setUser] = useState([]);
   return (
@@ -48,6 +49,12 @@ const index = () => {
           ),
         }}
       />
+      <View style={styles.searchbar}>
+        <Text style={styles.searchbarText}>Now in cinemas</Text>
+        <TouchableOpacity>
+          <Image source={darkSearch} />
+        </TouchableOpacity>
+      </View>
     </SafeAreaView>
   );
 };

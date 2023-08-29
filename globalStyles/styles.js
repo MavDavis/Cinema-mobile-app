@@ -31,6 +31,11 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeights: 700,
   },
+  searchbarText: {
+    color: colors.darkText,
+    fontSize: 20,
+    fontWeights: 700,
+  },
 
   NavbarFlex: {
     flexDirection: "row",
@@ -48,6 +53,12 @@ const styles = StyleSheet.create({
     backgroundColor: colors.orange,
     color: colors.darkText,
     //boxShadow: "0px 4px 16px 0px rgba(255, 128, 54, 0.25",
+  },
+  searchbar: {
+    padding: 20,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
 });
 export default styles;
