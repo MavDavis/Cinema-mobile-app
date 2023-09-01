@@ -9,6 +9,7 @@ import {
 import styles from "../globalStyles/styles";
 import React, { useState } from "react";
 import { Stack } from "expo-router";
+import dummy_data from "../assets/dummy";
 import {
   colors,
   Logo,
@@ -16,9 +17,10 @@ import {
   darkLocation,
   darkSearch,
 } from "../assets/index";
-import { TextInput } from "react-native-gesture-handler";
+import { ScrollView, TextInput } from "react-native-gesture-handler";
 const index = () => {
   const [user, setUser] = useState([]);
+
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar backgroundColor={colors.darkNav} barStyle="light-content" />
@@ -55,6 +57,16 @@ const index = () => {
           <Image source={darkSearch} />
         </TouchableOpacity>
       </View>
+      <ScrollView>
+        <View style={styles.card}>
+          {dummy_data.map((item) => (
+            <View key={`data-${item.name}`} style={styles.card}>
+              <Image style={styles.cardImage} source={item.img} />
+              <Text>{item.name}</Text>
+            </View>
+          ))}
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };

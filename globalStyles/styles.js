@@ -7,8 +7,30 @@ const styles = StyleSheet.create({
     color: colors.darkText,
     backgroundColor: colors.darkBg,
   },
+  flexContainer: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+    padding: 10,
+  },
+
   darkText: {
     color: colors.darkText,
+  },
+  card: {
+    width: "48%",
+    // //height: 200,
+    // backgroundColor: "lightblue",
+    // borderRadius: 10,
+    // marginVertical: 5,
+    // position: "relative",
+    // justifyContent: "center",
+    // alignItems: "center",
+  },
+  cardImage: {
+    // position: "relative",
+    // alignSelf: "center",
+    // maxWidth: "100%",
   },
   Navbar: {
     flexDirection: "row",
@@ -29,12 +51,12 @@ const styles = StyleSheet.create({
     color: colors.darkText,
     //font-family: PT Root UI;
     fontSize: 14,
-    fontWeights: 700,
+    fontWeight: "700",
   },
   searchbarText: {
     color: colors.darkText,
     fontSize: 20,
-    fontWeights: 700,
+    fontWeight: "700",
   },
 
   NavbarFlex: {
