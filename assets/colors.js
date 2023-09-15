@@ -3,5 +3,6 @@ const colors = {
   darkText: "#FFFFFF",
   darkNav: "#253554",
   orange: "#FF8036",
+  darkTextTwo: "#637394",
 };
 export { colors };

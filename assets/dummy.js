@@ -34,7 +34,7 @@ const dummy_data = [
     },
   },
   {
-    img: require("./images/excorcism.png"),
+    img: require("./images/exorcism.png"),
     name: "The Exorcism of God",
     kinopoisk_rating: "7.1",
     imdb_rating: "9.0",

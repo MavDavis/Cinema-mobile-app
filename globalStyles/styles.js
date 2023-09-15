@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
   flexContainer: {
     flexDirection: "row",
     flexWrap: "wrap",
-    justifyContent: "space-between",
+    //justifyContent: "space-between",
     padding: 10,
   },
 
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginVertical: 5,
     position: "relative",
-    justifyContent: "center",
+    //justifyContent: "center",
     alignItems: "center",
   },
   cardImage: {

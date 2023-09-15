@@ -1,19 +1,20 @@
-import {
-  View,
-  Text,
-  FlatList,
-  ScrollView,
-  TextInput,
-  Image,
-} from "react-native";
-import styles from "../../globalStyles/styles";
-import React from "react";
+import { View, Text, FlatList, TextInput, Image } from "react-native";
+import styles from "./MovieListStyle";
 const Movie = ({ item }) => {
-  console.log(item);
   return (
-    <View style={styles.card}>
-      <Image style={styles.cardImage} source={item.img} />
-      <Text style={styles.locationText}>{item.name}</Text>
+    <View style={{ width: "50%" }}>
+      <View style={styles.card}>
+        <View style={styles.imageContainer}>
+          <Text style={styles.absoluteText(item.ximdb_rating)}>
+            {item.imdb_rating}
+          </Text>
+          <Image style={styles.image} source={item.img} resizeMode="cover" />
+        </View>
+        <View style={styles.cardContent}>
+          <Text style={styles.title}>{item.name}</Text>
+          <Text style={styles.content}>{item.genre}</Text>
+        </View>
+      </View>
     </View>
   );
 };
@@ -22,8 +23,10 @@ const MovieList = ({ data }) => {
     <View>
       <FlatList
         data={data}
-        renderItem={({ item }) => <Movie item={item} />}
-        keyExtractor={(item) => `data-${item.name}`}
+        keyExtractor={(item, index) => index}
+        renderItem={Movie}
+        contentContainerStyle={{ paddingHorizontal: 0 }}
+        numColumns={2}
       />
     </View>
   );
