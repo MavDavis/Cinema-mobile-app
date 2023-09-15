@@ -5,6 +5,7 @@ import {
   Image,
   TouchableOpacity,
   StatusBar,
+  ScrollView,
 } from "react-native";
 import styles from "../globalStyles/styles";
 import React, { useState } from "react";
@@ -17,7 +18,8 @@ import {
   darkLocation,
   darkSearch,
 } from "../assets/index";
-import { ScrollView, TextInput } from "react-native-gesture-handler";
+
+import MovieList from "../components/Home/MovieList";
 const index = () => {
   const [user, setUser] = useState([]);
 
@@ -58,13 +60,8 @@ const index = () => {
         </TouchableOpacity>
       </View>
       <ScrollView>
-        <View style={styles.card}>
-          {dummy_data.map((item) => (
-            <View key={`data-${item.name}`} style={styles.card}>
-              <Image style={styles.cardImage} source={item.img} />
-              <Text>{item.name}</Text>
-            </View>
-          ))}
+        <View>
+          <MovieList data={dummy_data} />
         </View>
       </ScrollView>
     </SafeAreaView>
