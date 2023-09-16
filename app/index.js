@@ -60,7 +60,7 @@ const index = () => {
         </TouchableOpacity>
       </View>
       <ScrollView>
-        <View>
+        <View style={{ paddingBottom: 16 }}>
           <MovieList data={dummy_data} />
         </View>
       </ScrollView>

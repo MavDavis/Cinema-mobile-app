@@ -1,11 +1,25 @@
-import { View, Text, FlatList, TextInput, Image } from "react-native";
+import {
+  View,
+  Text,
+  FlatList,
+  TextInput,
+  Image,
+  TouchableOpacity,
+} from "react-native";
+import { router, useRouter } from "expo-router";
+
 import styles from "./MovieListStyle";
 const Movie = ({ item }) => {
   return (
     <View style={{ width: "50%" }}>
-      <View style={styles.card}>
+      <TouchableOpacity
+        style={styles.card}
+        onPress={() => {
+          router.push(`movieDetails/${item.id}`);
+        }}
+      >
         <View style={styles.imageContainer}>
-          <Text style={styles.absoluteText(item.ximdb_rating)}>
+          <Text style={styles.absoluteText(item.imdb_rating)}>
             {item.imdb_rating}
           </Text>
           <Image style={styles.image} source={item.img} resizeMode="cover" />
@@ -14,7 +28,7 @@ const Movie = ({ item }) => {
           <Text style={styles.title}>{item.name}</Text>
           <Text style={styles.content}>{item.genre}</Text>
         </View>
-      </View>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -23,7 +37,7 @@ const MovieList = ({ data }) => {
     <View>
       <FlatList
         data={data}
-        keyExtractor={(item, index) => index}
+        keyExtractor={(item) => item.id}
         renderItem={Movie}
         contentContainerStyle={{ paddingHorizontal: 0 }}
         numColumns={2}

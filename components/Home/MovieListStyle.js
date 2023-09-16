@@ -3,7 +3,7 @@ import { colors } from "../../assets";
 const styles = StyleSheet.create({
   card: {
     marginTop: 10,
-    borderWidth: 1,
+    borderWidth: 0.6,
     width: "95%",
     flexDirection: "column",
     justifyContent: "start",
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     paddingVertical: 4,
     borderRadius: 8,
     color: colors.darkText,
-    backgroundColor: Number(number) < 5 ? colors.orange : colors.darkNav,
+    backgroundColor: Number(number) > 5 ? colors.orange : colors.darkNav,
     zIndex: 22,
     right: 0,
   }),

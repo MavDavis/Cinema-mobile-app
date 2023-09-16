@@ -1,5 +1,6 @@
 const dummy_data = [
   {
+    id: "123hb-jhbd-3r430",
     img: require("./images/batman.png"),
     name: "The Batman",
     kinopoisk_rating: "6.1",
@@ -17,6 +18,7 @@ const dummy_data = [
     },
   },
   {
+    id: "chfbfv-fvbvdf-0vvfvbr-8",
     img: require("./images/uncharted.png"),
     name: "Uncharted",
     kinopoisk_rating: "4.1",
@@ -34,23 +36,7 @@ const dummy_data = [
     },
   },
   {
-    img: require("./images/exorcism.png"),
-    name: "The Exorcism of God",
-    kinopoisk_rating: "7.1",
-    imdb_rating: "9.0",
-    genre: "Horror",
-    release_date: "",
-    director: "",
-    cast: "",
-    runtime: "",
-    certificate: "",
-    description: "",
-    Eurasia_Cinema: {
-      available_time: [],
-      distance_from_your_location: "2.4km",
-    },
-  },
-  {
+    id: "uhfbfbvfv-vfn-fvdsbh",
     img: require("./images/turning-red.png"),
     name: "Turning Red",
     kinopoisk_rating: "4.1",
@@ -68,6 +54,26 @@ const dummy_data = [
     },
   },
   {
+    id: "bnfjhbe-fgfg-f-f",
+    img: require("./images/exorcism.png"),
+    name: "The Exorcism of God",
+    kinopoisk_rating: "7.1",
+    imdb_rating: "9.0",
+    genre: "Horror",
+    release_date: "",
+    director: "",
+    cast: "",
+    runtime: "",
+    certificate: "",
+    description: "",
+    Eurasia_Cinema: {
+      available_time: [],
+      distance_from_your_location: "2.4km",
+    },
+  },
+
+  {
+    id: "fgesgf-=fvf-gvfg0g0ff-g",
     img: require("./images/spider-man.png"),
     name: "Spider-Man: No Way Home",
     kinopoisk_rating: "4.1",
@@ -85,6 +91,7 @@ const dummy_data = [
     },
   },
   {
+    id: "fgefgg-fgse-g-s-sff",
     img: require("./images/morbius.png"),
     name: "Morbius",
     kinopoisk_rating: "4.1",
