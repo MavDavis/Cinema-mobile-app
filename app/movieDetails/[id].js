@@ -31,32 +31,30 @@ const MovieDetails = () => {
     return <Text style={styles.locationText}>{movieObject.name}</Text>;
   };
   return (
-    <ScrollView style={{ flex: 1, backgroundColor: colors.darkBg }}>
-      <SafeAreaView style={{ flex: 1, backgroundColor: colors.darkBg }}>
-        <StatusBar backgroundColor={colors.darkNav} barStyle="light-content" />
-        <Stack.Screen
-          options={{
-            headerLeft: () => {
-              return (
-                <TouchableOpacity onPress={handlePress}>
-                  <Image source={Vector} />
-                </TouchableOpacity>
-              );
-            },
-            cardStyle: {
-              marginBottom: 0,
-              borderBottomWidth: 0,
-            },
-            headerStyle: { backgroundColor: colors.darkNav },
-            headerBackVisible: false,
-            headerTitleAlign: "center",
+    <SafeAreaView style={{ flex: 1, backgroundColor: colors.darkBg }}>
+      <StatusBar backgroundColor={colors.darkNav} barStyle="light-content" />
+      <Stack.Screen
+        options={{
+          headerLeft: () => {
+            return (
+              <TouchableOpacity onPress={handlePress}>
+                <Image source={Vector} />
+              </TouchableOpacity>
+            );
+          },
+          cardStyle: {
+            marginBottom: 0,
+            borderBottomWidth: 0,
+          },
+          headerStyle: { backgroundColor: colors.darkNav },
+          headerBackVisible: false,
+          headerTitleAlign: "center",
 
-            headerTitle: () => <CustomHeaderCenter />,
-          }}
-        />
-        <AppTab movie={movieObject} />
-      </SafeAreaView>
-    </ScrollView>
+          headerTitle: () => <CustomHeaderCenter />,
+        }}
+      />
+      <AppTab movie={movieObject} />
+    </SafeAreaView>
   );
 };
 

@@ -1,12 +1,11 @@
-import { View, Text, TouchableOpacity, Image } from "react-native";
+import { View, Text, ScrollView, TouchableOpacity, Image } from "react-native";
 import React from "react";
-import { Play, colors } from "../../assets";
+import { Play } from "../../assets";
 import styles from "../../globalStyles/styles";
-import AppButton from "../global/AppButton";
 
-const About = ({ movie, handlePressFunc }) => {
+const About = ({ movie }) => {
   return (
-    <View>
+    <ScrollView>
       <View
         style={{
           with: "100%",
@@ -66,17 +65,7 @@ const About = ({ movie, handlePressFunc }) => {
           <Text style={styles.movieDescTitle}>{movie.cast}</Text>
         </View>
       </View>
-      <View style={{ paddingHorizontal: 12 }}>
-        <AppButton
-          handlePress={() => {
-            handlePressFunc();
-          }}
-          bgColor={colors.orange}
-          textColor={colors.darkText}
-          text="Select session"
-        />
-      </View>
-    </View>
+    </ScrollView>
   );
 };
 

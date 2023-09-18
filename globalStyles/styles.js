@@ -173,5 +173,17 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: "500",
   },
+  sessionHeader: {
+    color: colors.darkText,
+    marginTop: 4,
+    fontSize: 14,
+    fontWeight: "700",
+  },
+  sessionHeaderTwo: {
+    color: colors.darkTextTwo,
+    fontSize: 14,
+    fontWeight: "500",
+    width: "18%",
+  },
 });
 export default styles;
