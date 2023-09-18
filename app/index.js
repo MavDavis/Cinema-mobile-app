@@ -39,6 +39,8 @@ const index = () => {
             </TouchableOpacity>
           ),
           headerStyle: { backgroundColor: colors.darkNav },
+          headerTitleAlign: "center",
+
           headerTitle: () => (
             <View style={styles.NavbarFlex}>
               <TouchableOpacity style={{ ...styles.location, marginRight: 16 }}>

@@ -81,5 +81,97 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
   },
+  AppTab: {
+    backgroundColor: colors.darkNav,
+    width: "100%",
+    paddingTop: 20,
+    flexDirection: "row",
+    alignItems: "stretch",
+    justifyContent: "space-between",
+    overflow: "hidden",
+    overflowX: "auto",
+    whiteSpace: "nowrap",
+    marginTop: 0,
+    borderWidth: 0,
+  },
+  AppTabTextContainer: (boolean) => ({
+    flex: 1,
+    textAlign: "center",
+    borderBottomWidth: 1,
+    paddingBottom: 20,
+    borderBottomColor: !boolean ? colors.darkNav : colors.orange,
+  }),
+  AppTabText: (boolean) => ({
+    color: !boolean ? colors.darkTextTwo : colors.orange,
+    fontSize: 16,
+    textAlign: "center",
+  }),
+  overlay: {
+    alignItems: "center",
+    justifyContent: "center",
+    ...StyleSheet.absoluteFillObject, // Position the overlay absolutely to cover the entire container
+    backgroundColor: "rgba(0, 0, 0, 0.3)", // Semi-transparent black color
+  },
+  playContainer: {
+    padding: 10,
+    backgroundColor: colors.darkBg,
+    borderRadius: 9999,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  ratings: {
+    backgroundColor: colors.darkNav,
+    width: "100%",
+    paddingVertical: 10,
+    paddingHorizontal: 12,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  rating: {
+    width: "50%",
+    alignItems: "center",
+    justifyContent: "center",
+    textAlign: "center",
+  },
+  ratingText1: {
+    color: colors.darkText,
+    fontSize: 16,
+    fontWeight: "700",
+    textAlign: "center",
+    marginBottom: 5,
+  },
+  movieDescription: {
+    color: colors.darkText,
+    fontSize: 14,
+    lineHeight: 18,
+  },
+  ratingText2: {
+    color: colors.darkTextTwo,
+    fontSize: 16,
+    textAlign: "center",
+  },
+  movieDescTitle: {
+    width: "70%",
+    textAlign: "left",
+    color: colors.darkText,
+    fontSize: 14,
+    lineHeight: 18,
+
+    fontWeight: "400",
+  },
+  movieTitleRow: {
+    flexDirection: "row",
+    width: "100%",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  movieTitle: {
+    lineHeight: 18,
+
+    color: colors.darkTextTwo,
+    fontSize: 14,
+    fontWeight: "500",
+  },
 });
 export default styles;
