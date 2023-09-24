@@ -28,18 +28,6 @@ const Availability = ({ movie }) => {
           }}
         >
           <Text style={styles.miniTitle}>{item.name}</Text>
-          <View
-            style={{
-              flexDirection: "row",
-              marginTop: 4,
-              justifyContent: "space-between",
-            }}
-          >
-            <Text style={styles.price}>₦{item.amounts.student}</Text>
-            <Text style={styles.price}>₦{item.amounts.student}</Text>
-            <Text style={styles.price}>₦{item.amounts.student}</Text>
-            <Text style={styles.price}>₦{item.amounts.student}</Text>
-          </View>
         </View>
       </TouchableOpacity>
     );

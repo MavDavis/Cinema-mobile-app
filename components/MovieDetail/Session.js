@@ -1,10 +1,11 @@
-import { Text, View, Image } from "react-native";
+import { Text, View, Image, ScrollView } from "react-native";
 import React, { useState } from "react";
 import { Calendar, Sort, colors } from "../../assets";
 import styles from "../../globalStyles/styles";
 import AppCheckbox from "../global/AppCheckbox";
 import Availability from "./Availability";
-import { ScrollView } from "react-native-gesture-handler";
+import AvailabilityIsChecked from "./AvailabilityIsChecked";
+import AnimatedAvailability from "./AnimatedAvailability";
 const Session = ({ movie }) => {
   const currentDate = new Date();
   const options = { month: "long" };
@@ -55,7 +56,9 @@ const Session = ({ movie }) => {
         <Text style={styles.sessionHeaderTwo}>Student</Text>
         <Text style={styles.sessionHeaderTwo}>VIP</Text>
       </View>
-      <Availability movie={movie} />
+      <ScrollView>
+        <AnimatedAvailability isChecked={isChecked} movie={movie} />
+      </ScrollView>
     </View>
   );
 };
