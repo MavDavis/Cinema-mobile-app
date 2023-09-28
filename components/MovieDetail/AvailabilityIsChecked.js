@@ -1,9 +1,17 @@
-import { View, Text, FlatList, StyleSheet, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  FlatList,
+  StyleSheet,
+  ScrollView,
+  Image,
+} from "react-native";
 import React, { useState } from "react";
-import { colors } from "../../assets";
+import { colors, darkLocation } from "../../assets";
 import { TouchableOpacity } from "react-native-gesture-handler";
 const Availability = ({ movie }) => {
-  const List = ({ item }) => {
+  const LittleList = (newItem, item) => {
+    console.log(item);
     return (
       <TouchableOpacity
         style={{
@@ -19,7 +27,7 @@ const Availability = ({ movie }) => {
             flex: 0.25,
           }}
         >
-          <Text style={styles.time}>{item.time}</Text>
+          <Text style={styles.time}>{newItem.newItem}</Text>
           <Text style={styles.location}>{item.location}</Text>
         </View>
         <View
@@ -27,9 +35,55 @@ const Availability = ({ movie }) => {
             flex: 0.75,
           }}
         >
-          <Text style={styles.miniTitle}>{item.name}</Text>
+          <View
+            style={{
+              flexDirection: "row",
+              marginTop: 4,
+              justifyContent: "space-between",
+            }}
+          >
+            {/* <Text style={styles.price}>₦{item.amounts.student}</Text>
+            <Text style={styles.price}>₦{item.amounts.student}</Text>
+            <Text style={styles.price}>₦{item.amounts.student}</Text>
+            <Text style={styles.price}>₦{item.amounts.student}</Text> */}
+          </View>
         </View>
       </TouchableOpacity>
+    );
+  };
+  const List = ({ item }) => {
+    return (
+      <View style={{}}>
+        <View
+          style={{
+            flexDirection: "row",
+            padding: 12,
+            borderBottomWidth: 0.5,
+            marginBottom: 6,
+            justifyContent: "space-between",
+          }}
+        >
+          <View style={{ alignItems: "start" }}>
+            <Text style={styles.time}>{item.name}</Text>
+            <Text style={styles.location}>{item.location}</Text>
+          </View>
+          <View
+            style={{
+              alignItems: "center",
+              flexDirection: "row",
+              justifyContent: "center",
+            }}
+          >
+            <Image source={darkLocation} style={{ marginRight: 8 }} />
+            <Text style={styles.location}>
+              {item.distance_from_your_location}
+            </Text>
+          </View>
+        </View>
+        {item.extraTime.map((newItem, index) => (
+          <LittleList newItem={newItem} item={item.amounts} key={index} />
+        ))}
+      </View>
     );
   };
   let [availability, setAvailability] = useState(movie?.availability);

@@ -18,6 +18,7 @@ const dummy_data = [
       {
         name: "Eurasia_Cinema",
         time: "12:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "North",
         amounts: { student: "2200", vip: "5000", child: "1100", adult: "3000" },
         distance_from_your_location: "2.4km",
@@ -25,6 +26,7 @@ const dummy_data = [
       {
         name: "Kinopark 8 IMAX Saryarka",
         time: "15:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "North",
         amounts: { student: "3200", vip: "6000", child: "2100", adult: "4000" },
         distance_from_your_location: "2.4km",
@@ -32,6 +34,7 @@ const dummy_data = [
       {
         name: "Kinopark 6 Keruencity Astana",
         time: "16:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "South USA",
         amounts: { student: "3100", vip: "5100", child: "1100", adult: "2600" },
         distance_from_your_location: "2.4km",
@@ -39,6 +42,7 @@ const dummy_data = [
       {
         name: "Arman Asia Park",
         time: "16:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "Asia",
         amounts: { student: "4200", vip: "6000", child: "1100", adult: "5000" },
         distance_from_your_location: "2.4km",
@@ -46,6 +50,7 @@ const dummy_data = [
       {
         name: "Chaplin MEGA Silk Way",
         time: "12:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "North",
         amounts: { student: "2200", vip: "5000", child: "1100", adult: "3000" },
         distance_from_your_location: "2.4km",
@@ -53,6 +58,7 @@ const dummy_data = [
       {
         name: "Chaplin Khan Shatyr",
         time: "15:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "Sandiego",
         amounts: {
           student: "7200",
@@ -65,6 +71,7 @@ const dummy_data = [
       {
         name: "Kinopark 7 IMAX Keruen",
         time: "12:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "Playtsons",
         amounts: { student: "2200", vip: "5000", child: "1100", adult: "3000" },
         distance_from_your_location: "2.4km",
@@ -90,6 +97,7 @@ const dummy_data = [
       {
         name: "Eurasia_Cinema",
         time: "12:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "North",
         amounts: { student: "2200", vip: "5000", child: "1100", adult: "3000" },
         distance_from_your_location: "2.4km",
@@ -97,6 +105,8 @@ const dummy_data = [
       {
         name: "Kinopark 8 IMAX Saryarka",
         time: "15:43",
+        extraTime: ["12:43", "15:10", "19:30"],
+
         location: "North",
         amounts: { student: "3200", vip: "6000", child: "2100", adult: "4000" },
         distance_from_your_location: "2.4km",
@@ -104,6 +114,7 @@ const dummy_data = [
       {
         name: "Kinopark 6 Keruencity Astana",
         time: "16:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "South USA",
         amounts: { student: "3100", vip: "5100", child: "1100", adult: "2600" },
         distance_from_your_location: "2.4km",
@@ -111,6 +122,7 @@ const dummy_data = [
       {
         name: "Arman Asia Park",
         time: "16:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "Asia",
         amounts: { student: "4200", vip: "6000", child: "1100", adult: "5000" },
         distance_from_your_location: "2.4km",
@@ -118,6 +130,7 @@ const dummy_data = [
       {
         name: "Chaplin MEGA Silk Way",
         time: "12:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "North",
         amounts: { student: "2200", vip: "5000", child: "1100", adult: "3000" },
         distance_from_your_location: "2.4km",
@@ -125,6 +138,7 @@ const dummy_data = [
       {
         name: "Chaplin Khan Shatyr",
         time: "15:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "Sandiego",
         amounts: {
           student: "7200",
@@ -137,6 +151,7 @@ const dummy_data = [
       {
         name: "Kinopark 7 IMAX Keruen",
         time: "12:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "Playtsons",
         amounts: { student: "2200", vip: "5000", child: "1100", adult: "3000" },
         distance_from_your_location: "2.4km",
@@ -162,6 +177,7 @@ const dummy_data = [
       {
         name: "Eurasia_Cinema",
         time: "12:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "North",
         amounts: { student: "2200", vip: "5000", child: "1100", adult: "3000" },
         distance_from_your_location: "2.4km",
@@ -169,6 +185,7 @@ const dummy_data = [
       {
         name: "Kinopark 8 IMAX Saryarka",
         time: "15:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "North",
         amounts: { student: "3200", vip: "6000", child: "2100", adult: "4000" },
         distance_from_your_location: "2.4km",
@@ -176,6 +193,7 @@ const dummy_data = [
       {
         name: "Kinopark 6 Keruencity Astana",
         time: "16:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "South USA",
         amounts: { student: "3100", vip: "5100", child: "1100", adult: "2600" },
         distance_from_your_location: "2.4km",
@@ -183,6 +201,7 @@ const dummy_data = [
       {
         name: "Arman Asia Park",
         time: "16:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "Asia",
         amounts: { student: "4200", vip: "6000", child: "1100", adult: "5000" },
         distance_from_your_location: "2.4km",
@@ -190,6 +209,7 @@ const dummy_data = [
       {
         name: "Chaplin MEGA Silk Way",
         time: "12:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "North",
         amounts: { student: "2200", vip: "5000", child: "1100", adult: "3000" },
         distance_from_your_location: "2.4km",
@@ -197,6 +217,7 @@ const dummy_data = [
       {
         name: "Chaplin Khan Shatyr",
         time: "15:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "Sandiego",
         amounts: {
           student: "7200",
@@ -209,6 +230,7 @@ const dummy_data = [
       {
         name: "Kinopark 7 IMAX Keruen",
         time: "12:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "Playtsons",
         amounts: { student: "2200", vip: "5000", child: "1100", adult: "3000" },
         distance_from_your_location: "2.4km",
@@ -234,6 +256,7 @@ const dummy_data = [
       {
         name: "Eurasia_Cinema",
         time: "12:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "North",
         amounts: { student: "2200", vip: "5000", child: "1100", adult: "3000" },
         distance_from_your_location: "2.4km",
@@ -241,6 +264,7 @@ const dummy_data = [
       {
         name: "Kinopark 8 IMAX Saryarka",
         time: "15:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "North",
         amounts: { student: "3200", vip: "6000", child: "2100", adult: "4000" },
         distance_from_your_location: "2.4km",
@@ -248,6 +272,7 @@ const dummy_data = [
       {
         name: "Kinopark 6 Keruencity Astana",
         time: "16:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "South USA",
         amounts: { student: "3100", vip: "5100", child: "1100", adult: "2600" },
         distance_from_your_location: "2.4km",
@@ -255,6 +280,7 @@ const dummy_data = [
       {
         name: "Arman Asia Park",
         time: "16:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "Asia",
         amounts: { student: "4200", vip: "6000", child: "1100", adult: "5000" },
         distance_from_your_location: "2.4km",
@@ -262,6 +288,7 @@ const dummy_data = [
       {
         name: "Chaplin MEGA Silk Way",
         time: "12:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "North",
         amounts: { student: "2200", vip: "5000", child: "1100", adult: "3000" },
         distance_from_your_location: "2.4km",
@@ -269,6 +296,7 @@ const dummy_data = [
       {
         name: "Chaplin Khan Shatyr",
         time: "15:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "Sandiego",
         amounts: {
           student: "7200",
@@ -281,6 +309,7 @@ const dummy_data = [
       {
         name: "Kinopark 7 IMAX Keruen",
         time: "12:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "Playtsons",
         amounts: { student: "2200", vip: "5000", child: "1100", adult: "3000" },
         distance_from_your_location: "2.4km",
@@ -306,6 +335,7 @@ const dummy_data = [
       {
         name: "Eurasia_Cinema",
         time: "12:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "North",
         amounts: { student: "2200", vip: "5000", child: "1100", adult: "3000" },
         distance_from_your_location: "2.4km",
@@ -313,6 +343,7 @@ const dummy_data = [
       {
         name: "Kinopark 8 IMAX Saryarka",
         time: "15:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "North",
         amounts: { student: "3200", vip: "6000", child: "2100", adult: "4000" },
         distance_from_your_location: "2.4km",
@@ -320,6 +351,7 @@ const dummy_data = [
       {
         name: "Kinopark 6 Keruencity Astana",
         time: "16:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "South USA",
         amounts: { student: "3100", vip: "5100", child: "1100", adult: "2600" },
         distance_from_your_location: "2.4km",
@@ -327,6 +359,7 @@ const dummy_data = [
       {
         name: "Arman Asia Park",
         time: "16:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "Asia",
         amounts: { student: "4200", vip: "6000", child: "1100", adult: "5000" },
         distance_from_your_location: "2.4km",
@@ -334,6 +367,7 @@ const dummy_data = [
       {
         name: "Chaplin MEGA Silk Way",
         time: "12:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "North",
         amounts: { student: "2200", vip: "5000", child: "1100", adult: "3000" },
         distance_from_your_location: "2.4km",
@@ -341,6 +375,7 @@ const dummy_data = [
       {
         name: "Chaplin Khan Shatyr",
         time: "15:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "Sandiego",
         amounts: {
           student: "7200",
@@ -353,6 +388,7 @@ const dummy_data = [
       {
         name: "Kinopark 7 IMAX Keruen",
         time: "12:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "Playtsons",
         amounts: { student: "2200", vip: "5000", child: "1100", adult: "3000" },
         distance_from_your_location: "2.4km",
@@ -378,6 +414,7 @@ const dummy_data = [
       {
         name: "Eurasia_Cinema",
         time: "12:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "North",
         amounts: { student: "2200", vip: "5000", child: "1100", adult: "3000" },
         distance_from_your_location: "2.4km",
@@ -385,6 +422,7 @@ const dummy_data = [
       {
         name: "Kinopark 8 IMAX Saryarka",
         time: "15:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "North",
         amounts: { student: "3200", vip: "6000", child: "2100", adult: "4000" },
         distance_from_your_location: "2.4km",
@@ -392,6 +430,7 @@ const dummy_data = [
       {
         name: "Kinopark 6 Keruencity Astana",
         time: "16:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "South USA",
         amounts: { student: "3100", vip: "5100", child: "1100", adult: "2600" },
         distance_from_your_location: "2.4km",
@@ -399,6 +438,7 @@ const dummy_data = [
       {
         name: "Arman Asia Park",
         time: "16:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "Asia",
         amounts: { student: "4200", vip: "6000", child: "1100", adult: "5000" },
         distance_from_your_location: "2.4km",
@@ -406,6 +446,7 @@ const dummy_data = [
       {
         name: "Chaplin MEGA Silk Way",
         time: "12:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "North",
         amounts: { student: "2200", vip: "5000", child: "1100", adult: "3000" },
         distance_from_your_location: "2.4km",
@@ -413,6 +454,7 @@ const dummy_data = [
       {
         name: "Chaplin Khan Shatyr",
         time: "15:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "Sandiego",
         amounts: {
           student: "7200",
@@ -425,6 +467,7 @@ const dummy_data = [
       {
         name: "Kinopark 7 IMAX Keruen",
         time: "12:43",
+        extraTime: ["12:43", "15:10", "19:30"],
         location: "Playtsons",
         amounts: { student: "2200", vip: "5000", child: "1100", adult: "3000" },
         distance_from_your_location: "2.4km",

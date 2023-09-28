@@ -42,18 +42,27 @@ const AnimatedAvailability = ({ movie, isChecked }) => {
 
   return (
     <View>
-      <Animated.View
-        style={[
-          animatedStyle,
-          {
-            // Additional styles if needed
-          },
-        ]}
-      >
+      <Animated.View>
         {isChecked ? (
-          <AvailabilityIsChecked movie={movie} />
+          <AvailabilityIsChecked
+            movie={movie}
+            // style={[
+            //   animatedStyle,
+            //   {
+            //     // Additional styles if needed
+            //   },
+            // ]}
+          />
         ) : (
-          <Availability movie={movie} />
+          <Availability
+            movie={movie}
+            // style={[
+            //   animatedStyle,
+            //   {
+            //     // Additional styles if needed
+            //   },
+            // ]}
+          />
         )}
       </Animated.View>
     </View>
