@@ -5,7 +5,7 @@ import About from "./About";
 import Session from "./Session";
 import AppButton from "../global/AppButton";
 import { colors } from "../../assets";
-const AppTab = ({ movie }) => {
+const AppTab = ({ movie, handlePress }) => {
   const [items, setItems] = useState([
     { name: "About", selected: true },
     { name: "Sessions", selected: false },
@@ -47,7 +47,7 @@ const AppTab = ({ movie }) => {
       )}
       {items[1].selected && (
         <View style={{ flex: 1 }}>
-          <Session movie={movie} />
+          <Session movie={movie} handlepress={handlePress} />
         </View>
       )}
     </View>

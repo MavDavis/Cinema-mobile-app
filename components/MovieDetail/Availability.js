@@ -2,10 +2,13 @@ import { View, Text, FlatList, StyleSheet, ScrollView } from "react-native";
 import React, { useState } from "react";
 import { colors } from "../../assets";
 import { TouchableOpacity } from "react-native-gesture-handler";
-const Availability = ({ movie }) => {
+const Availability = ({ movie, handlepress }) => {
   const List = ({ item }) => {
     return (
       <TouchableOpacity
+        onPress={() => {
+          handlepress();
+        }}
         style={{
           flexDirection: "row",
           padding: 12,
@@ -35,10 +38,10 @@ const Availability = ({ movie }) => {
               justifyContent: "space-between",
             }}
           >
+            <Text style={styles.price}>₦{item.amounts.adult}</Text>
+            <Text style={styles.price}>₦{item.amounts.child}</Text>
             <Text style={styles.price}>₦{item.amounts.student}</Text>
-            <Text style={styles.price}>₦{item.amounts.student}</Text>
-            <Text style={styles.price}>₦{item.amounts.student}</Text>
-            <Text style={styles.price}>₦{item.amounts.student}</Text>
+            <Text style={styles.price}>₦{item.amounts.vip}</Text>
           </View>
         </View>
       </TouchableOpacity>

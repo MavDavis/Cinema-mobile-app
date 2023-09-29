@@ -9,48 +9,7 @@ import {
 import React, { useState } from "react";
 import { colors, darkLocation } from "../../assets";
 import { TouchableOpacity } from "react-native-gesture-handler";
-const Availability = ({ movie }) => {
-  const LittleList = (newItem, item) => {
-    console.log(item);
-    return (
-      <TouchableOpacity
-        style={{
-          flexDirection: "row",
-          padding: 12,
-          borderBottomWidth: 0.5,
-          marginBottom: 6,
-          justifyContent: "space-between",
-        }}
-      >
-        <View
-          style={{
-            flex: 0.25,
-          }}
-        >
-          <Text style={styles.time}>{newItem.newItem}</Text>
-          <Text style={styles.location}>{item.location}</Text>
-        </View>
-        <View
-          style={{
-            flex: 0.75,
-          }}
-        >
-          <View
-            style={{
-              flexDirection: "row",
-              marginTop: 4,
-              justifyContent: "space-between",
-            }}
-          >
-            {/* <Text style={styles.price}>₦{item.amounts.student}</Text>
-            <Text style={styles.price}>₦{item.amounts.student}</Text>
-            <Text style={styles.price}>₦{item.amounts.student}</Text>
-            <Text style={styles.price}>₦{item.amounts.student}</Text> */}
-          </View>
-        </View>
-      </TouchableOpacity>
-    );
-  };
+const Availability = ({ movie, handlepress }) => {
   const List = ({ item }) => {
     return (
       <View style={{}}>
@@ -60,6 +19,7 @@ const Availability = ({ movie }) => {
             padding: 12,
             borderBottomWidth: 0.5,
             marginBottom: 6,
+            alignItems: "center",
             justifyContent: "space-between",
           }}
         >
@@ -80,9 +40,50 @@ const Availability = ({ movie }) => {
             </Text>
           </View>
         </View>
-        {item.extraTime.map((newItem, index) => (
-          <LittleList newItem={newItem} item={item.amounts} key={index} />
-        ))}
+        {item.extraTime.map((newItem, index) => {
+          return (
+            <TouchableOpacity
+              onPress={() => {
+                handlepress();
+              }}
+              key={index}
+              style={{
+                flexDirection: "row",
+                padding: 12,
+                borderBottomWidth: 0.5,
+                marginBottom: 6,
+                justifyContent: "space-between",
+              }}
+            >
+              <View
+                style={{
+                  flex: 0.25,
+                }}
+              >
+                <Text style={styles.time}>{newItem.time}</Text>
+                <Text style={styles.location}>{newItem.loc}</Text>
+              </View>
+              <View
+                style={{
+                  flex: 0.75,
+                }}
+              >
+                <View
+                  style={{
+                    flexDirection: "row",
+                    marginTop: 4,
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <Text style={styles.price}>₦{item.amounts.adult}</Text>
+                  <Text style={styles.price}>₦{item.amounts.child}</Text>
+                  <Text style={styles.price}>₦{item.amounts.student}</Text>
+                  <Text style={styles.price}>₦{item.amounts.vip}</Text>
+                </View>
+              </View>
+            </TouchableOpacity>
+          );
+        })}
       </View>
     );
   };

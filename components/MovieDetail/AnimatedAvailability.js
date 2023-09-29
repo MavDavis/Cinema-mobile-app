@@ -11,7 +11,7 @@ import Animated, {
   withRepeat,
 } from "react-native-reanimated";
 
-const AnimatedAvailability = ({ movie, isChecked }) => {
+const AnimatedAvailability = ({ movie, isChecked, handlepress }) => {
   const animation = useSharedValue(0);
   useEffect(() => {
     animation.value = withTiming(isChecked ? 1 : 0, {
@@ -46,6 +46,7 @@ const AnimatedAvailability = ({ movie, isChecked }) => {
         {isChecked ? (
           <AvailabilityIsChecked
             movie={movie}
+            handlepress={handlepress}
             // style={[
             //   animatedStyle,
             //   {
@@ -56,6 +57,7 @@ const AnimatedAvailability = ({ movie, isChecked }) => {
         ) : (
           <Availability
             movie={movie}
+            handlepress={handlepress}
             // style={[
             //   animatedStyle,
             //   {
