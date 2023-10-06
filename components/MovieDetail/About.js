@@ -15,7 +15,7 @@ const About = ({ movie }) => {
           borderWidth: 0.4,
         }}
       >
-        <Image style={{ flex: 1, resizeMode: "cover" }} source={movie.img} />
+        <Image style={{ flex: 1, resizeMode: "cover" }} source={movie?.img} />
         <View style={styles.overlay}>
           <TouchableOpacity style={styles.playContainer}>
             <Image source={Play} />

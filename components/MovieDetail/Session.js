@@ -5,7 +5,7 @@ import styles from "../../globalStyles/styles";
 import AppCheckbox from "../global/AppCheckbox";
 
 import AnimatedAvailability from "./AnimatedAvailability";
-const Session = ({ movie, handlepress }) => {
+const Session = ({ movie }) => {
   const currentDate = new Date();
   const options = { month: "long" };
   const [isChecked, setIsChecked] = useState(false);
@@ -56,11 +56,7 @@ const Session = ({ movie, handlepress }) => {
         <Text style={styles.sessionHeaderTwo}>VIP</Text>
       </View>
       <ScrollView>
-        <AnimatedAvailability
-          isChecked={isChecked}
-          movie={movie}
-          handlepress={handlepress}
-        />
+        <AnimatedAvailability isChecked={isChecked} movie={movie} />
       </ScrollView>
     </View>
   );

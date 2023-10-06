@@ -5,7 +5,10 @@ import darkLanguage from "./images/dark-language.png";
 import Play from "./images/Play.png";
 import { colors } from "./colors";
 import Calendar from "./images/Calendar.png";
+import Enlarge from "./images/Enlarge.png";
+import Compress from "./images/Compress.png";
 import Sort from "./images/Sort.png";
+import Vector from "./images/Vector.png";
 export {
   Logo,
   Play,
@@ -14,5 +17,8 @@ export {
   darkLocation,
   darkSearch,
   Calendar,
+  Enlarge,
   Sort,
+  Vector,
+  Compress,
 };

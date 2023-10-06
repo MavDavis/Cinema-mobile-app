@@ -7,22 +7,23 @@ import {
   TouchableOpacity,
   ScrollView,
 } from "react-native";
+import { connect } from "react-redux";
+import { addCinema } from "../../actions/types";
+
 import { Stack, useRouter, useSearchParams } from "expo-router";
 import styles from "../../globalStyles/styles";
-import { colors } from "../../assets/index";
-import Vector from "../../assets/images/Vector.png";
-import dummy_data from "../../assets/dummy";
+import { colors, Vector } from "../../assets/index";
 import React, { useEffect, useState } from "react";
 import AppTab from "../../components/MovieDetail/AppTab";
 
-const MovieDetails = () => {
+const MovieDetails = ({ movies, addCinema }) => {
   const [movieObject, setMovieObject] = useState("");
   const router = useRouter();
   const params = useSearchParams();
-
   useEffect(() => {
-    let item = dummy_data.find((item) => item.id === params.id);
+    let item = movies.find((item) => item.id === params.id);
     setMovieObject(item);
+    addCinema(item);
   }, []);
   const handlePress = () => {
     router.back();
@@ -62,5 +63,15 @@ const MovieDetails = () => {
     </SafeAreaView>
   );
 };
-
-export default MovieDetails;
+// Define mapStateToProps to access Redux state
+const mapStateToProps = (state) => {
+  return {
+    movies: state.cinema.movies,
+  };
+};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addCinema: (cinemaName) => dispatch(addCinema(cinemaName)),
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(MovieDetails);

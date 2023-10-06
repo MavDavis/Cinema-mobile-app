@@ -1,13 +1,19 @@
 import { View, Text, FlatList, StyleSheet, ScrollView } from "react-native";
 import React, { useState } from "react";
 import { colors } from "../../assets";
+import { connect } from "react-redux"; // Import connect
+import { addCinemaTicket } from "../../actions/types";
+import { useRouter } from "expo-router";
 import { TouchableOpacity } from "react-native-gesture-handler";
-const Availability = ({ movie, handlepress }) => {
+const Availability = ({ movie, addCinemaTicket }) => {
+  const router = useRouter();
+
   const List = ({ item }) => {
     return (
       <TouchableOpacity
         onPress={() => {
-          handlepress();
+          router.push(`CinemaView`);
+          addCinemaTicket(item);
         }}
         style={{
           flexDirection: "row",
@@ -52,8 +58,14 @@ const Availability = ({ movie, handlepress }) => {
     <List item={item} key={`key-id-${item.name}`} />
   ));
 };
-
-export default Availability;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addCinemaTicket: (cinemaTicket) => {
+      dispatch(addCinemaTicket(cinemaTicket));
+    },
+  };
+};
+export default connect(null, mapDispatchToProps)(Availability);
 const styles = StyleSheet.create({
   time: {
     color: colors.darkText,

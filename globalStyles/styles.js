@@ -17,6 +17,10 @@ const styles = StyleSheet.create({
   darkText: {
     color: colors.darkText,
   },
+  darkTextTwo: {
+    color: colors.darkTextTwo,
+    marginTop: 4,
+  },
   card: {
     width: "48%",
     backgroundColor: "lightblue",

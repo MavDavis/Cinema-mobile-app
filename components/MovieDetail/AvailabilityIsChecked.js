@@ -6,10 +6,14 @@ import {
   ScrollView,
   Image,
 } from "react-native";
+import { useRouter } from "expo-router";
+
 import React, { useState } from "react";
 import { colors, darkLocation } from "../../assets";
 import { TouchableOpacity } from "react-native-gesture-handler";
-const Availability = ({ movie, handlepress }) => {
+const Availability = ({ movie }) => {
+  const router = useRouter();
+
   const List = ({ item }) => {
     return (
       <View style={{}}>
@@ -44,7 +48,7 @@ const Availability = ({ movie, handlepress }) => {
           return (
             <TouchableOpacity
               onPress={() => {
-                handlepress();
+                router.push(`CinemaView`);
               }}
               key={index}
               style={{
