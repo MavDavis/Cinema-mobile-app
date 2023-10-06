@@ -189,5 +189,43 @@ const styles = StyleSheet.create({
     fontWeight: "500",
     width: "18%",
   },
+  cinemaViewHeadButtons: {
+    padding: 8,
+    borderColor: colors.darkTextTwo,
+    borderWidth: 0.5,
+    width: "45%",
+    borderRadius: 10,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  cinemaViewHeadButtonsText: {
+    marginLeft: 4,
+    color: colors.darkText,
+    fontWeight: "700",
+  },
+  circleBox: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    marginRight: 8,
+  },
+  circleItem: {},
+  circle: (item) => ({
+    width: 16,
+    height: 16,
+    padding: 4,
+    borderRadius: 9999,
+    marginRight: 3,
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor:
+      item === "Chosen" ? colors.orange : " rgba(109, 158, 255, 0.10)",
+  }),
+  circleText: {
+    color: colors.darkText,
+    fontWeight: "500",
+  },
 });
 export default styles;

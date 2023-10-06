@@ -54,12 +54,7 @@ const MovieDetails = ({ movies, addCinema }) => {
           headerTitle: () => <CustomHeaderCenter />,
         }}
       />
-      <AppTab
-        movie={movieObject}
-        handlePress={() => {
-          console.log("hy");
-        }}
-      />
+      <AppTab movie={movieObject} />
     </SafeAreaView>
   );
 };

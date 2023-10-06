@@ -10,11 +10,18 @@ import {
 
 import { connect } from "react-redux";
 import styles from "../globalStyles/styles";
-import { colors, Vector, Enlarge, Compress } from "../assets";
+import { colors, Vector, Enlarge, Compress, Calendar, Clock } from "../assets";
 import { Stack, useRouter } from "expo-router";
+import FilterBy from "../components/CinemaView/Headers";
+import Ticket from "../components/CinemaView/Ticket";
 const CinemaView = ({ cinema, currentMovie }) => {
   const router = useRouter();
+  const currentDate = new Date();
+  const options = { month: "long" };
+  const currentMonth = currentDate.toLocaleString(undefined, options);
+  const currentDay = currentDate.getDate();
   const [isEnlarged, setIsEnlarged] = useState(false);
+
   const handlePress = () => {
     router.back();
   };
@@ -32,6 +39,7 @@ const CinemaView = ({ cinema, currentMovie }) => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.darkBg }}>
       <StatusBar backgroundColor={colors.darkNav} barStyle="light-content" />
+
       <Stack.Screen
         options={{
           headerLeft: () => {
@@ -58,6 +66,29 @@ const CinemaView = ({ cinema, currentMovie }) => {
           headerTitle: () => <CustomHeaderCenter />,
         }}
       />
+      <View
+        style={{
+          backgroundColor: colors.darkNav,
+          paddingHorizontal: 8,
+          paddingVertical: 16,
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        <TouchableOpacity style={styles.cinemaViewHeadButtons}>
+          <Image source={Calendar} />
+          <Text style={styles.cinemaViewHeadButtonsText}>
+            {currentMonth.slice(0, 4)},{currentDay}
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.cinemaViewHeadButtons}>
+          <Image source={Clock} />
+          <Text style={styles.cinemaViewHeadButtonsText}>{cinema.time}</Text>
+        </TouchableOpacity>
+      </View>
+      <FilterBy />
+      <Ticket />
     </SafeAreaView>
   );
 };
