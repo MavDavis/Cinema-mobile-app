@@ -2,10 +2,12 @@ import { BOOK_CINEMA } from "../actions/types";
 import { ADD_CINEMA } from "../actions/types";
 import { ADD_CINEMA_TICKET } from "../actions/types";
 import dummy_data from "../assets/dummy";
+import dummyCinemaTickets from "../assets/dummyCinemaTickets";
 const initialState = {
   movies: dummy_data,
   currentMovie: "",
   cinema: "",
+  dummyCinemaTickets: dummyCinemaTickets,
 };
 const cinemaReducer = (state = initialState, action) => {
   switch (action.type) {
