@@ -10,6 +10,7 @@ import Compress from "./images/Compress.png";
 import Sort from "./images/Sort.png";
 import Vector from "./images/Vector.png";
 import Seat from "./images/Seat.png";
+import SmallSeat from "./images/SmallSeat.png";
 
 import Clock from "./images/Clock.png";
 export {
@@ -18,6 +19,7 @@ export {
   colors,
   darkLanguage,
   darkLocation,
+  SmallSeat,
   darkSearch,
   Calendar,
   Enlarge,

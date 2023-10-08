@@ -1,12 +1,8 @@
 import React from "react";
-import { View, StyleSheet, Text, FlatList } from "react-native";
+import { View, StyleSheet, Text } from "react-native";
 import { colors } from "../../assets/colors";
-import { connect } from "react-redux";
 
-const BucketHandleBorder = ({ dummyCinemaTickets }) => {
-  const Cinema = ({ item }) => {
-    return <View style={styles.cinemaTicket(item.name)}></View>;
-  };
+const BucketHandleBorder = () => {
   return (
     <View style={styles.container}>
       <Text style={{ color: colors.darkTextTwo }}>Screen</Text>
@@ -15,19 +11,12 @@ const BucketHandleBorder = ({ dummyCinemaTickets }) => {
         <View style={styles.handleBody} />
         <View style={styles.bentEndRight} />
       </View>
-      <FlatList
-        data={dummyCinemaTickets}
-        keyExtractor={(item) => `${item}-${Math.random() * 10000}-Abc`}
-        renderItem={Cinema}
-        contentContainerStyle={{ paddingHorizontal: 0 }}
-      />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     justifyContent: "center",
     alignItems: "center",
   },
@@ -57,10 +46,5 @@ const styles = StyleSheet.create({
   },
   cinemaTicket: (item) => ({}),
 });
-const mapStateToProps = (state) => {
-  return {
-    dummyCinemaTickets: state.cinema.dummyCinemaTickets,
-  };
-};
-const objectToExport = connect(mapStateToProps, null)(BucketHandleBorder);
-export default objectToExport;
+
+export default BucketHandleBorder;
