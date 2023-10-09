@@ -2,9 +2,9 @@ import React from "react";
 import { View, StyleSheet, Text } from "react-native";
 import { colors } from "../../assets/colors";
 
-const BucketHandleBorder = () => {
+const BucketHandleBorder = ({ isEnlarged }) => {
   return (
-    <View style={styles.container}>
+    <View style={{ ...styles.container, marginVertical: isEnlarged ? 20 : 0 }}>
       <Text style={{ color: colors.darkTextTwo }}>Screen</Text>
       <View style={styles.handle}>
         <View style={styles.bentEndLeft} />

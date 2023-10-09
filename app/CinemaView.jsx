@@ -12,7 +12,7 @@ import { connect } from "react-redux";
 import styles from "../globalStyles/styles";
 import { colors, Vector, Enlarge, Compress, Calendar, Clock } from "../assets";
 import { Stack, useRouter } from "expo-router";
-import FilterBy from "../components/CinemaView/Headers";
+import Headers from "../components/CinemaView/Headers";
 import Ticket from "../components/CinemaView/Ticket";
 const CinemaView = ({ cinema, currentMovie }) => {
   const router = useRouter();
@@ -87,8 +87,8 @@ const CinemaView = ({ cinema, currentMovie }) => {
           <Text style={styles.cinemaViewHeadButtonsText}>{cinema.time}</Text>
         </TouchableOpacity>
       </View>
-      <FilterBy />
-      <Ticket />
+      <Headers />
+      <Ticket isEnlarged={isEnlarged} handleEnlarging={handleEnlarging} />
     </SafeAreaView>
   );
 };
