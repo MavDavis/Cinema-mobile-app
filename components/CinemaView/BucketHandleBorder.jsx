@@ -4,7 +4,7 @@ import { colors } from "../../assets/colors";
 
 const BucketHandleBorder = ({ isEnlarged }) => {
   return (
-    <View style={{ ...styles.container, marginVertical: isEnlarged ? 20 : 0 }}>
+    <View style={{ ...styles.container, marginVertical: isEnlarged ? 25 : 0 }}>
       <Text style={{ color: colors.darkTextTwo }}>Screen</Text>
       <View style={styles.handle}>
         <View style={styles.bentEndLeft} />

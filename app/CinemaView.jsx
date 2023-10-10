@@ -6,6 +6,7 @@ import {
   StatusBar,
   TouchableOpacity,
   Image,
+  ActivityIndicator,
 } from "react-native";
 
 import { connect } from "react-redux";
@@ -14,7 +15,9 @@ import { colors, Vector, Enlarge, Compress, Calendar, Clock } from "../assets";
 import { Stack, useRouter } from "expo-router";
 import Headers from "../components/CinemaView/Headers";
 import Ticket from "../components/CinemaView/Ticket";
-const CinemaView = ({ cinema, currentMovie }) => {
+import AppButton from "../components/global/AppButton";
+import BucketHandleBorder from "../components/CinemaView/BucketHandleBorder";
+const CinemaView = ({ cinema, currentMovie, numberOfTickets }) => {
   const router = useRouter();
   const currentDate = new Date();
   const options = { month: "long" };
@@ -88,7 +91,22 @@ const CinemaView = ({ cinema, currentMovie }) => {
         </TouchableOpacity>
       </View>
       <Headers />
+      {isEnlarged && <BucketHandleBorder isEnlarged={isEnlarged} />}
       <Ticket isEnlarged={isEnlarged} handleEnlarging={handleEnlarging} />
+      <View style={{ paddingHorizontal: 12, paddingTop: 12 }}>
+        {numberOfTickets > 0 && (
+          <AppButton
+            handlePress={() => {
+              router.push("/loader");
+            }}
+            bgColor={colors.orange}
+            textColor={colors.darkText}
+            text={`Buy ${numberOfTickets || 0} tickets • ${
+              3200 * numberOfTickets
+            } ₦`}
+          />
+        )}
+      </View>
     </SafeAreaView>
   );
 };
@@ -96,6 +114,9 @@ const mapStateToProps = (state) => {
   return {
     cinema: state.cinema.cinema,
     currentMovie: state.cinema.currentMovie,
+    numberOfTickets: state.cinema.dummyCinemaTickets.filter(
+      (item) => item.picked === "chosen"
+    ).length,
   };
 };
 const ConnectedCinemaView = connect(mapStateToProps)(CinemaView);

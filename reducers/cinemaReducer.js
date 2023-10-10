@@ -1,6 +1,10 @@
-import { BOOK_CINEMA } from "../actions/types";
-import { ADD_CINEMA } from "../actions/types";
-import { ADD_CINEMA_TICKET } from "../actions/types";
+import {
+  ADD_CINEMA_TICKET,
+  MARK_TICKET_CHOSEN,
+  ADD_CINEMA,
+  BOOK_CINEMA,
+} from "../actions/types";
+
 import dummy_data from "../assets/dummy";
 import dummyCinemaTickets from "../assets/dummyCinemaTickets";
 const initialState = {
@@ -30,6 +34,24 @@ const cinemaReducer = (state = initialState, action) => {
         ...state,
         cinema: action.payload,
       };
+    case MARK_TICKET_CHOSEN:
+      const { payload } = action;
+
+      const updatedTickets = state.dummyCinemaTickets.map((ticket) => {
+        if (ticket.id === payload) {
+          return {
+            ...ticket,
+            picked: ticket.picked === "chosen" ? "available" : "chosen",
+          };
+        }
+        return ticket;
+      });
+
+      return {
+        ...state,
+        dummyCinemaTickets: updatedTickets,
+      };
+
     default:
       return state;
   }

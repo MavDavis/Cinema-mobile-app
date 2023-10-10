@@ -5,12 +5,19 @@ import {
   FlatList,
   Image,
   TouchableOpacity,
+  ScrollView,
 } from "react-native";
 import { colors, SmallSeat, Seat } from "../../assets/colors";
+import { markTicketChosen } from "../../actions/types";
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import BucketHandleBorder from "./BucketHandleBorder";
-const Ticket = ({ dummyCinemaTickets, handleEnlarging, isEnlarged }) => {
+const Ticket = ({
+  dummyCinemaTickets,
+  handleEnlarging,
+  isEnlarged,
+  markTicketChosen,
+}) => {
   const Cinema = ({ item }) => {
     return (
       <>
@@ -24,30 +31,24 @@ const Ticket = ({ dummyCinemaTickets, handleEnlarging, isEnlarged }) => {
       </>
     );
   };
-  const CinemaBig = ({ item }) => {
-    return (
-      <TouchableOpacity style={styles.cinemaTicketBig(item.picked)}>
-        <Text style={{ color: colors.darkText }}>{item.number}</Text>
-      </TouchableOpacity>
-    );
-  };
+  // const CinemaBig =
   return (
-    <TouchableOpacity
-      onPress={() => {
-        if (!isEnlarged) {
-          handleEnlarging();
-          return;
-        }
-      }}
+    <View
       style={{
         flex: 1,
         justifyContent: "center",
         alignContent: "center",
       }}
     >
-      <BucketHandleBorder isEnlarged={isEnlarged} />
+      {!isEnlarged && <BucketHandleBorder isEnlarged={isEnlarged} />}
       {!isEnlarged ? (
-        <View
+        <TouchableOpacity
+          onPress={() => {
+            if (!isEnlarged) {
+              handleEnlarging();
+              return;
+            }
+          }}
           style={{
             justifyContent: "center",
             marginTop: 12,
@@ -61,25 +62,37 @@ const Ticket = ({ dummyCinemaTickets, handleEnlarging, isEnlarged }) => {
             numColumns={10}
             contentContainerStyle={{ paddingHorizontal: 0 }}
           />
-        </View>
+        </TouchableOpacity>
       ) : (
-        <View
-          style={{
-            justifyContent: "center",
-            paddingHorizontal: 4,
-            alignItems: "center",
-          }}
-        >
+        <ScrollView horizontal={true} style={{ paddingHorizontal: 4 }}>
           <FlatList
             data={dummyCinemaTickets}
             keyExtractor={(item) => `${item}-${Math.random() * 10000}-Abcd `}
-            renderItem={CinemaBig}
+            renderItem={({ item }) => {
+              return (
+                <TouchableOpacity
+                  disabled={item.picked === "occupied"}
+                  style={styles.cinemaTicketBig(item.picked)}
+                  onPress={() => {
+                    if (item.picked === "available") {
+                    }
+                    markTicketChosen(item.id);
+                  }}
+                >
+                  <Text style={{ color: colors.darkText }}>
+                    {item.picked === "available" || item.picked === "chosen"
+                      ? item.number
+                      : "x"}
+                  </Text>
+                </TouchableOpacity>
+              );
+            }}
             numColumns={10}
             contentContainerStyle={{ paddingHorizontal: 0 }}
           />
-        </View>
+        </ScrollView>
       )}
-    </TouchableOpacity>
+    </View>
   );
 };
 const mapStateToProps = (state) => {
@@ -87,7 +100,12 @@ const mapStateToProps = (state) => {
     dummyCinemaTickets: state.cinema.dummyCinemaTickets,
   };
 };
-const objectToExport = connect(mapStateToProps, null)(Ticket);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    markTicketChosen: (ticket_id) => dispatch(markTicketChosen(ticket_id)),
+  };
+};
+const objectToExport = connect(mapStateToProps, mapDispatchToProps)(Ticket);
 
 const styles = StyleSheet.create({
   cinemaTicket: (item) => ({
@@ -105,7 +123,7 @@ const styles = StyleSheet.create({
         ? colors.orange
         : item === "occupied"
         ? "#1F293D"
-        : "rgba(109, 158, 255, 0.10)",
+        : "#253554",
   }),
   cinemaTicketBig: (item) => ({
     width: 32,
@@ -122,7 +140,7 @@ const styles = StyleSheet.create({
         ? colors.orange
         : item === "occupied"
         ? "#1F293D"
-        : "rgba(109, 158, 255, 0.10)",
+        : "#253554",
   }),
   seatImage: {
     width: 12,
