@@ -41,7 +41,9 @@ const Pay = () => {
           headerBackVisible: false,
           headerTitleAlign: "center",
           headerRight: () => {},
-          headerTitle: () => {},
+          headerTitle: () => (
+            <Text style={styles.locationText}>Pay for tickets</Text>
+          ),
         }}
       />
     </SafeAreaView>
