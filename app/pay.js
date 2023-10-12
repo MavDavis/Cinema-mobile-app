@@ -49,5 +49,6 @@ const Pay = () => {
     </SafeAreaView>
   );
 };
+// hy
 
 export default Pay;
