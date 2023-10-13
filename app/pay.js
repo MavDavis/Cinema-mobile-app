@@ -16,6 +16,7 @@ import { Stack, useRouter } from "expo-router";
 import Ticket from "../components/CinemaView/Ticket";
 import AppButton from "../components/global/AppButton";
 const Pay = () => {
+  // streak
   const router = useRouter();
   const handlePress = () => {
     router.push("/CinemaView");
@@ -49,6 +50,5 @@ const Pay = () => {
     </SafeAreaView>
   );
 };
-// hy
 
 export default Pay;
